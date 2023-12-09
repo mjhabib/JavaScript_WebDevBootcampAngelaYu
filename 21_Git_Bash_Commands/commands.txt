@@ -1,0 +1,37 @@
+select default profile (command palette)
+
+ls -a = list all
+
+cd = change directory
+
+cd ~ = root folder (C:\Users\mjhabib)
+
+cd .. = parent folder
+
+clear
+
+hold Alt + Click = move the cursor in line
+Ctrl + A = go to the start
+Ctrl + E = go to the end
+Ctrl + U = clear the line
+
+mkdir = make directory
+
+pwd = print working directory
+
+touch NAME.txt = create a file
+
+start NAME.txt = open the file
+
+code NAME.txt = open the file with vscode
+
+cat NAME.txt = see the file contents
+
+rm NAME.txt = remove the file
+
+rm * = remove all the files inside the current directory
+
+rm -r DIRECTORY_NAME = remove the folder inside on our current working directory
+
+https://www.learnenough.com/command-line-tutorial
+

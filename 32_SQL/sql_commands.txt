@@ -1,0 +1,88 @@
+-- https://www.w3schools.com/sql/default.asp
+
+-- This is how we create a new table
+CREATE TABLE products
+(
+  id INT NOT NULL,
+  name STRING,
+  price MONEY,
+  PRIMARY KEY (id)
+)
+
+-- Add new data (in one or two lines)
+INSERT INTO products VALUES (1, "Pen", 1.20)
+
+-- Add data but skip a cell
+INSERT INTO products (id, name)
+VALUES (2, "Pencil")
+
+-- Add data with corresponding values during coding
+INSERT INTO products (id, name)
+VALUES ($1, $2)
+,[2, "Pencil"]  -- These values will replace instead of '$1' and '$2'
+
+-- Read data
+SELECT * FROM products;
+
+SELECT name, price FROM products
+
+SELECT * FROM products WHERE id = 1
+
+SELECT name FROM products WHERE name LIKE 'P%'  -- Names which start with 'P'
+SELECT name FROM products WHERE name LIKE 'P' || '%'  -- Same results
+
+SELECT name FROM products WHERE name LIKE '%l'  -- Names which end with 'l'
+
+-- Order by
+SELECT * FROM users ORDER BY id ASC(/DESC)
+
+-- Update data
+UPDATE products SET price = 0.80 WHERE id = 2
+-- Note: if I don't provide id, it'll update the whole table
+
+-- Alter table by adding a new column
+ALTER TABLE products ADD stock INT
+
+ALTER TABLE products ADD UNIQUE (id, name)  -- it prevents duplicated data
+
+ALTER TABLE student RENAME TO users
+
+ALTER TABLE users ALTER COLUMN first_name TYPE VARCHAR(20)
+
+-- Delete certain info
+DELETE FROM products WHERE name = "Pencil" (AND) id = 2
+-- Note: executing this line of code without WHERE statement will remove everything
+
+-- Drop table
+DROP TABLE IF EXISTS users
+
+-- Relationship between tables
+CREATE TABLE orders (
+    id INT NOT NULL,
+    order_number INT,
+    customer_id INT, -- The customer who made this particular order (customers table)
+    product_id INT,  -- To form a relationship with our products table
+    PRIMARY KEY (id),
+    FOREIGN KEY (customer_id) REFERENCES customers(id),  -- The keys that is gonna link our tables together
+    FOREIGN KEY (product_id) REFERENCES products(id)
+)
+
+
+-- Join tables (inner join)
+SELECT orders.order_number, customers.first_name, customers.lst_name, customers.address
+FROM orders
+INNER JOIN customers ON orders.customers_id = customers.id  
+
+
+-- One to One relationship:
+Table student: id SERIAL PRIMARY KEY,
+Table contact: id INTEGER REFERENCES student(id) UNIQUE,
+
+-- One to Many relationship:
+student: the same
+homework: 1st row: id  ; last row: student_id INTEGER REFERENCES student(id)
+
+-- Many to Many relationship:
+student: the same
+class: id
+enrollment: 1st row: student_id REFERENCES student(id)  ;  2nd row: class_id REFERENCES class(id)  ; last row: PRIMARY KEY (student_id, class_id)

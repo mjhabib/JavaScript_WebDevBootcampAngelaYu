@@ -1,0 +1,21 @@
+/* Write your code here: */
+
+h1, h2 {  /* multi selector */
+    color: blueviolet;
+}
+
+div > p {  /* parent > child */
+    color: firebrick;
+}
+
+.box li {  /* descendent */
+    color: blue;
+}
+
+li.done{  /* chain selector */
+    color: seagreen;
+}
+
+ul p.done {  /* combining all together */
+    font-size: 0.7rem;
+}

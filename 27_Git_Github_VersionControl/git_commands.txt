@@ -1,0 +1,62 @@
+// Local Git
+
+git init = initialize a git file inside the project folder
+
+ls -a = to see all files & folders including the hidden ones
+
+git status = staging area, which files are committed and which are not
+
+git add FILE_NAME = add a new file to be committed later on
+
+git add . = add all files in the working directory
+
+git reset FILE_NAME = remove a file from being committed later on
+
+git rm --cashed -r . = remove everything before committing
+
+// pre-config
+git config --global user.email "mj.habib4@gmail.com"
+git config --global user.name "MJ Habib"
+
+git commit -m "MESSAGE" = explain this version of commit (present tense)
+
+git log = see list of the commits
+
+git diff FILE_NAME = see the difference between a changed file
+
+git checkout HASH = to revert back to another version
+
+
+// Github
+
+git remote add origin REPOSETORY_URL = create a remote on Github
+
+git branch -M main = create the main branch
+
+git push -u origin main = it pushes the local git to a remote host (Github)
+
+
+// GitIgnore
+
+touch .gitignore = add a hidden gitignore file
+code .gitignore = Then add which files to ignore on each line (# = comment ; *.txt = all txt files)
+
+
+// Cloning
+
+git clone REPOSETORY_URL = clone someone else's project to my local host
+
+
+// Branching and Merging
+
+git branch BRANCH_NAME = create a new branch
+
+git branch = show all the branch names
+
+git checkout BRANCH_NAME = switch to another branch
+
+git merge BRANCH_NAME = merge this branch to the current branch (like main)
+
+
+// Fork: Like cloning but it'll be done on Github not our local system
+// Pull Request: Offering changes to someone else's code, when we don't have write access

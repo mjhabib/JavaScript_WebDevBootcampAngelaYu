@@ -1,0 +1,20 @@
+{
+  "name": "4.0-ejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MJ Habib",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.9.2"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
