@@ -1,0 +1,25 @@
+<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+    <div class="list-group">
+      <label class="list-group-item d-flex gap-3">
+        <input class="form-check-input flex-shrink-0" type="checkbox" style="font-size: 1.375em;">
+        <span class="pt-1 form-checked-content">
+
+            <% if (locals.todayTask) { %>
+             <strong><%= todayTask %></strong>
+            <% } %>
+
+          
+        </span>
+      </label>
+      <form action="/" method="POST">
+      <label class="list-group-item d-flex gap-3 bg-body-tertiary">
+        <span class="pt-1 form-checked-content">
+            <div class="input-group mb-3">
+                <input type="text" name="taskName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Write something!" required>
+              </div>         
+            <input type="submit" class="btn btn-success" value="Add">
+        </span>
+      </label>
+    </form>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<%- include('header.ejs') %>
+
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">
+
+            <% if (locals.calcDate) { %>
+                <%= calcDate %>
+                    <% } %>
+        </h1>
+
+        <div class="col-lg-6 mx-auto">
+            <h2>Work's Todo List</h2>
+        </div>
+        
+        <%- include('taskWork.ejs') %>
+
+    </div>
+
+    <%- include('footer.ejs') %>
